@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "274196888767",
+    "project_id": "fir-signinclean-20aea",
+    "storage_bucket": "fir-signinclean-20aea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274196888767:android:0e0435e5b58e5dd6ad1a0a",
+        "android_client_info": {
+          "package_name": "com.example.firebasesigninwithmanualdi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274196888767-uu4t756m2jl27btb8donrmopjgucpd48.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firebasesigninwithmanualdi",
+            "certificate_hash": "de3d21d9c8bc4473e4881bcb8c0e103b347ecb48"
+          }
+        },
+        {
+          "client_id": "274196888767-af6te7fva3kinbb81m26cb0jt45kobst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByersBlAia4HJMsSjFIF0p7F1kISWKWEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274196888767-af6te7fva3kinbb81m26cb0jt45kobst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

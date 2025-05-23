@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FirebaseSignInWithManualDI</string>
+    <string name="auth_title">Authentication</string>
+    <string name="sign_in_with_google">Sign in with google</string>
+    <string name="profile_title">Profile</string>
+    <string name="users_title">Users</string>
+    <string name="created_on">Joined on: %s</string>
+    <string name="details_title">Details</string>
+    <string name="default_web_client_id">274196888767-af6te7fva3kinbb81m26cb0jt45kobst.apps.googleusercontent.com</string>
+</resources>
