@@ -2,26 +2,40 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    alias(libs.plugins.compose.compiler)
+}
+
+secrets {
+    propertiesFileName = "secrets.properties"
+
+    defaultPropertiesFileName = "local.defaults.properties"
 }
 
 android {
+
     namespace = "com.example.firebasesigninwithmanualdi"
     compileSdk = 34
 
     defaultConfig {
+
         applicationId = "com.example.firebasesigninwithmanualdi"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
+        resourceConfigurations += listOf("en")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
+        multiDexEnabled = true
     }
 
     buildTypes {
+
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -31,6 +45,7 @@ android {
         }
     }
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
@@ -38,6 +53,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -54,6 +70,9 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    // Navigation SDK Maps
+    implementation(libs.navigation)
 
     // View model
     implementation(libs.androidx.lifecycle.viewmodel.compose)
@@ -80,6 +99,24 @@ dependencies {
     // Coil library
     implementation(libs.coil.compose)
 
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+
+    // Places sdk
+    implementation(libs.places) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+
+    // Location services
+    implementation(libs.play.services.location) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+
+    // XML Material
+    implementation(libs.material)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -87,4 +124,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Desugaring
+    coreLibraryDesugaring(libs.desugar.jdk.libs.nio)
 }

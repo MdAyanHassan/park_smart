@@ -20,13 +20,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import kotlin.Unit
 
 @Composable
 fun ProfileContent(
     paddingValues: PaddingValues,
     displayName: String,
     photoUrl: String,
-    navigateToUsersScreen: () -> Unit
+    navigateToUsersScreen: () -> Unit,
+    navigateToParkingSpotsScreen: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -58,6 +60,10 @@ fun ProfileContent(
 
         Button(onClick = { navigateToUsersScreen() }) {
             Text(text = "Get all users")
+        }
+
+        Button(onClick = { navigateToParkingSpotsScreen() }) {
+            Text(text = "Get parking spots")
         }
 
     }

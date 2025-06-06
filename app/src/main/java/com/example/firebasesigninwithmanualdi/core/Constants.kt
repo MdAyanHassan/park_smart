@@ -8,6 +8,8 @@ const val DEBUG_TAG = "DebugFirebase"
 const val AUTH_ROUTE = "authentication"
 const val PROFILE_ROUTE = "profile"
 const val USERS_ROUTE = "users"
+const val PARKING_SPOTS_ROUTE = "parking_spots"
+const val NAVIGATION_ROUTE = "navigation/{destPlaceId}"
 
 // Field names
 const val DISPLAY_NAME = "display_name"

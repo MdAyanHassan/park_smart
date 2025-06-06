@@ -8,6 +8,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.firebasesigninwithmanualdi.presentation.authentication.AuthenticationScreen
+import com.example.firebasesigninwithmanualdi.presentation.navigation_map.NavigationMapScreen
+import com.example.firebasesigninwithmanualdi.presentation.parking_spots.ParkingSpotScreen
 import com.example.firebasesigninwithmanualdi.presentation.profile.ProfileScreen
 import com.example.firebasesigninwithmanualdi.presentation.users.UsersScreen
 
@@ -38,6 +40,9 @@ fun NavGraph(
                 },
                 navigateToUsersScreen = {
                     navController.navigate(Screen.Users.route)
+                },
+                navigateToParkingSpotsScreen = {
+                    navController.navigate(Screen.ParkingSpots.route)
                 }
             )
         }
@@ -45,6 +50,26 @@ fun NavGraph(
         composable(route = Screen.Users.route) {
             UsersScreen(
                 onBackClick = {
+                    navController.popBackStack()
+                }
+            )
+        }
+
+        composable(route = Screen.ParkingSpots.route) {
+            ParkingSpotScreen(
+                onBackClick = {
+                    navController.popBackStack()
+                },
+                onNavigationClick = { destPlaceId, destPlaceTitle ->
+                    navController.navigate(Screen.Navigation.route.replace("{destPlaceId}", destPlaceId ?: ""))
+                }
+            )
+        }
+
+        composable(route = Screen.Navigation.route) {
+            NavigationMapScreen(
+                destinationPlaceId = it.arguments?.getString("destPlaceId") ?: "",
+                onMapLaunched = {
                     navController.popBackStack()
                 }
             )
