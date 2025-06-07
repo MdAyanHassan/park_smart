@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
-import com.example.firebasesigninwithmanualdi.NavigationMapsActivity
+import com.example.firebasesigninwithmanualdi.NavigationMapActivity
 
 @Composable
 fun NavigationMapScreen(
@@ -14,7 +14,7 @@ fun NavigationMapScreen(
     val context = LocalContext.current
 
     LaunchedEffect(Unit) {
-        val mapIntent = Intent(context, NavigationMapsActivity::class.java).apply {
+        val mapIntent = Intent(context, NavigationMapActivity::class.java).apply {
             putExtra("destPlaceId", destinationPlaceId)
         }
 

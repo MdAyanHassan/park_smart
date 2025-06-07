@@ -30,7 +30,7 @@
         </activity>
 
         <activity
-            android:name=".NavigationMapsActivity"
+            android:name=".NavigationMapActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
 

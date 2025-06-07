@@ -17,9 +17,9 @@ import com.google.android.libraries.navigation.RoutingOptions;
 import com.google.android.libraries.navigation.SupportNavigationFragment;
 import com.google.android.libraries.navigation.Waypoint;
 
-public class NavigationMapsActivity extends AppCompatActivity {
+public class NavigationMapActivity extends AppCompatActivity {
 
-    private static final String TAG = NavigationMapsActivity.class.getSimpleName();
+    private static final String TAG = NavigationMapActivity.class.getSimpleName();
     private Navigator mNavigator;
     private SupportNavigationFragment mNavFragment;
     private RoutingOptions mRoutingOptions;
@@ -69,6 +69,8 @@ public class NavigationMapsActivity extends AppCompatActivity {
                         mNavFragment =
                                 (SupportNavigationFragment)
                                         getSupportFragmentManager().findFragmentById(R.id.main_map_fragment);
+
+                        mNavigator.setTaskRemovedBehavior(Navigator.TaskRemovedBehavior.QUIT_SERVICE);
 
                         mNavFragment.getMapAsync(
                                 googleMap -> googleMap.followMyLocation(CameraPerspective.TILTED));
