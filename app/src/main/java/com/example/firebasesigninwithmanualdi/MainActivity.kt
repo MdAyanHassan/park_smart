@@ -11,6 +11,7 @@ import com.example.firebasesigninwithmanualdi.navigation.NavGraph
 import com.example.firebasesigninwithmanualdi.navigation.Screen
 import com.example.firebasesigninwithmanualdi.presentation.authentication.AuthenticationViewModel
 import com.example.firebasesigninwithmanualdi.ui.theme.FirebaseSignInWithManualDITheme
+import com.google.firebase.FirebaseApp
 
 class MainActivity : ComponentActivity() {
     private lateinit var navController: NavHostController
@@ -23,6 +24,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        FirebaseApp.initializeApp(this)
         setContent {
             navController = rememberNavController()
             FirebaseSignInWithManualDITheme {

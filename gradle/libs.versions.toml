@@ -3,6 +3,7 @@ agp = "8.5.0"
 coilCompose = "2.6.0"
 converterGson = "2.9.0"
 desugar_jdk_libs_nio = "2.1.5"
+firebaseFunctionsKtx = "21.2.1"
 kotlin = "2.1.0"
 coreKtx = "1.13.1"
 firebaseBom = "33.1.1"
@@ -21,12 +22,14 @@ playServicesAuth = "21.2.0"
 navigationCompose = "2.5.3"
 playServicesLocation = "21.3.0"
 retrofit = "2.9.0"
+stripeAndroid = "21.18.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 desugar_jdk_libs_nio = { module = "com.android.tools:desugar_jdk_libs_nio", version.ref = "desugar_jdk_libs_nio" }
+firebase-functions-ktx = { module = "com.google.firebase:firebase-functions-ktx", version.ref = "firebaseFunctionsKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
@@ -52,6 +55,7 @@ places = { module = "com.google.android.libraries.places:places", version.ref = 
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+stripe-android = { module = "com.stripe:stripe-android", version.ref = "stripeAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

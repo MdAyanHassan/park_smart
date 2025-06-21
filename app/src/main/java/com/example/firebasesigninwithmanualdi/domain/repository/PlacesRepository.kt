@@ -6,4 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface PlacesRepository {
     suspend fun getParkingSpots(): Flow<Response<List<Place>>>
+
+    suspend fun startPayment(): Response<List<String>>
 }

@@ -35,6 +35,10 @@ class ParkingSpotsViewModel(
             }
         }
     }
+
+    suspend fun onPaymentSheetInitialize(): Response<List<String>> {
+        return parkingSpotsRepository.startPayment()
+    }
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {

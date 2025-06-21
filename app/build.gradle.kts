@@ -68,41 +68,86 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.core.ktx) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    implementation(libs.androidx.lifecycle.runtime.ktx) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+
+    // Firebase functions
+    implementation(libs.firebase.functions.ktx) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    // Stripe
+    implementation(libs.stripe.android) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 
     // Navigation SDK Maps
     implementation(libs.navigation)
 
     // View model
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 
     // Navigation
-    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.compose) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.activity.compose) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    implementation(platform(libs.androidx.compose.bom)) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+    implementation(libs.androidx.ui) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    implementation(libs.androidx.ui.graphics) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    implementation(libs.androidx.ui.tooling.preview) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    implementation(libs.androidx.material3) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 
     // Firebase Sign in with Google
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.auth)
-    implementation(libs.play.services.auth)
+    implementation(platform(libs.firebase.bom)) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    implementation(libs.firebase.auth) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    implementation(libs.play.services.auth) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 
     // Firebase firestore
-    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.firestore) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 
     // Coil library
-    implementation(libs.coil.compose)
+    implementation(libs.coil.compose) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 
     // Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.okhttp)
+    implementation(libs.retrofit) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    implementation(libs.converter.gson) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    implementation(libs.okhttp) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 
     // Places sdk
     implementation(libs.places) {
@@ -115,16 +160,34 @@ dependencies {
     }
 
     // XML Material
-    implementation(libs.material)
+    implementation(libs.material) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    testImplementation(libs.junit) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    androidTestImplementation(libs.androidx.junit) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    androidTestImplementation(libs.androidx.espresso.core) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    androidTestImplementation(platform(libs.androidx.compose.bom)) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    androidTestImplementation(libs.androidx.ui.test.junit4) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    debugImplementation(libs.androidx.ui.tooling) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
+    debugImplementation(libs.androidx.ui.test.manifest) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 
     // Desugaring
-    coreLibraryDesugaring(libs.desugar.jdk.libs.nio)
+    coreLibraryDesugaring(libs.desugar.jdk.libs.nio) {
+        exclude(group = "com.google.android.gms", module = "play-services-maps")
+    }
 }
