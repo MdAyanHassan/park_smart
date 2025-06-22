@@ -36,6 +36,7 @@ class MainActivity : ComponentActivity() {
 
     private fun checkAuthenticationState() {
         if (authenticationViewModel.isUserAuthenticated) {
+            navController.popBackStack()
             navController.navigate(Screen.Profile.route)
         }
     }
