@@ -35,7 +35,7 @@ A mobile app that helps users find the nearest parking spots, navigate to them, 
 
 1. **Clone the repo:**
    ```bash
-   git clone https://github.com/yourusername/park-smart.git
+   git clone https://github.com/MdAyanHassan/park-smart.git
    ```
 
 2. **Add API Key:**
